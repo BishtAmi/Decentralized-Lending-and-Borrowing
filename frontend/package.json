@@ -1,0 +1,35 @@
+{
+  "name": "solana",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@chakra-ui/react": "^2.8.1",
+    "@digitak/esrun": "^3.2.25",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@project-serum/borsh": "^0.2.5",
+    "@solana-developers/node-helpers": "^1.0.4",
+    "@solana/wallet-adapter-react-ui": "^0.9.34",
+    "@solana/wallet-adapter-wallets": "^0.19.22",
+    "@solana/web3.js": "^1.78.5",
+    "bs58": "^5.0.0",
+    "dotenv": "^16.3.1",
+    "framer-motion": "^10.16.4",
+    "next": "^13.5.3",
+    "react": "^18.2.0",
+    "react-datepicker": "^4.20.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.24"
+  }
+}

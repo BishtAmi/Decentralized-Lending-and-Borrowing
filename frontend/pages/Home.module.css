@@ -1,0 +1,140 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  text-align: left;
+  background-color: hwb(0 61% 37%);
+  background: url(../public/pastel-pink-bokeh-lights.jpg);
+  position: relative;
+  height: 100vh;
+  /* min-height: 500px;
+  max-height: 1080px; */
+  background-size: cover;
+  /* padding: 15px;
+  overflow: hidden; */
+}
+
+.Grant{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #042c54;
+  text-align: left;
+  position: relative;
+  height: 100vh;
+}
+.fullcomp{
+  display: flex;
+  flex-direction: row;
+}
+.rightpart{
+  flex:1;
+  display: grid;
+}
+.leftpart{
+  flex: 0.75;
+  margin-right: 0.7rem;
+}
+.msg {
+  margin-top: 5%;
+  color: black;
+  font-size: large;
+}
+
+.paymsg
+{
+  margin-top: 10%;
+  color: black;
+  font-size: 50px;
+  text-align: center;
+}
+.AppHeader {
+  height: 90px;
+  display: flex;
+  background: radial-gradient(
+    circle at 3% 25%,
+    rgb(40, 16, 180) 0%,
+    rgb(121, 14, 109) 100%
+  );
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 50px;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  flex: 0.75;
+  flex-direction: row;
+  text-align: left;
+  font-weight: bold;
+  color: #81afdd;
+  font-size: 13px;
+}
+.button3 {
+  text-align: center;
+}
+.left {
+  margin: 10px;
+  padding: 10px 20px;
+  color: #ac1515;
+  border: none;
+  cursor: pointer;
+}
+
+.right {
+  margin: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.centers{
+  margin: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.AppBody {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-top: 50px;
+}
+
+.Loan {
+  background-color: white;
+  box-shadow: rgba(0,0,0,0.3) 0px 3px 8px;
+  padding:23px 12px;
+} 
+.Loanh1 {
+  text-align: center;
+  font-weight: bold;
+
+  color: hsl(238, 100%, 18%);
+  font-size: 25px;
+}
+.Loanh2 {
+  margin-top: 120px;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(245, 244, 244);
+  font-size: 23px;
+}
+.char {
+  font-weight: bold;
+  color: black;
+  font-size: 13px;
+}
+
+.Form {
+  background-color: white;
+}
