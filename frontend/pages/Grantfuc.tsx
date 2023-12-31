@@ -18,7 +18,7 @@ export interface CardProps {
   movie: Loan;
 }
 import { useState } from "react";
-export const Card: FC<CardProps> = (props) => {
+const Card: FC<CardProps> = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [dob, setDob] = useState("");
@@ -133,3 +133,5 @@ export const Card: FC<CardProps> = (props) => {
     </Center>
   );
 };
+
+export default Card;
