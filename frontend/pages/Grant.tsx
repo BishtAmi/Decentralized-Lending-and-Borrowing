@@ -15,8 +15,7 @@ import styles from "../pages/Home.module.css";
 export interface CardProps {
   movie: Loan;
 }
-
-export const Card: FC<CardProps> = (props) => {
+const Card: FC<CardProps> = (props) => {
   return (
     <Center>
       <Box
@@ -64,3 +63,5 @@ export const Card: FC<CardProps> = (props) => {
     </Center>
   );
 };
+
+export default Card;
