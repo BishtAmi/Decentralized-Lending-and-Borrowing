@@ -1,4 +1,4 @@
-import { Card } from "./Grant";
+import Card  from "./Grant";
 import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { FC, useEffect, useMemo, useState } from "react";
 import { Loan } from "../Models/Loan";
