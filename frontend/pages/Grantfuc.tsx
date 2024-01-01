@@ -13,19 +13,19 @@ import { FC } from "react";
 import { Loan } from "../Models/Loan";
 import styles from "../pages/Home.module.css";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
-const MOVIE_REVIEW_PROGRAM_ID = "54NiyD7beYFBDUZq8DNTpmAbeqKB3YNgE8CnUpzYmCCt";
+const LOAN_REVIEW_PROGRAM_ID = "54NiyD7beYFBDUZq8DNTpmAbeqKB3YNgE8CnUpzYmCCt";
 export interface CardProps {
-  movie?: Loan; // Make movie prop optional
+  Loan?: Loan; // Make Loan prop optional
 }
 import { useState } from "react";
 const Card: FC<CardProps> = (props) => {
-  // Check if 'props.movie' is undefined or in progress
-  if (!props.movie) {
+  // Check if 'props.Loan' is undefined or in progress
+  if (!props.Loan) {
     return (
       <Box>
-        {/* Render a message for undefined or in-progress movie */}
+        {/* Render a message for undefined or in-progress Loan */}
         <Text color="red">
-          Movie information not available or page in progress
+          Loan information not available or page in progress
         </Text>
       </Box>
     );
@@ -38,23 +38,23 @@ const Card: FC<CardProps> = (props) => {
   const { publicKey, sendTransaction } = useWallet();
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    const movie = new Loan(name, email, dob, amount);
-    handleTransactionSubmit(movie);
+    const Loans = new Loan(name, email, dob, amount);
+    handleTransactionSubmit(Loans);
   };
 
-  const handleTransactionSubmit = async (movie: Loan) => {
+  const handleTransactionSubmit = async (Loan: Loan) => {
     if (!publicKey) {
       alert("Please connect your wallet!");
       return;
     }
-    const amountint = parseInt(props.movie.amount, 10);
+    const amountint = parseInt(props.Loan.amount, 10);
 
-    const buffer = props.movie.amount;
+    const buffer = props.Loan.amount;
     const transaction = new web3.Transaction();
 
     const [pda] = await web3.PublicKey.findProgramAddress(
-      [publicKey.toBuffer(), Buffer.from(movie.name)], // new TextEncoder().encode(movie.name)],
-      new web3.PublicKey(MOVIE_REVIEW_PROGRAM_ID)
+      [publicKey.toBuffer(), Buffer.from(Loan.name)], // new TextEncoder().encode(Loan.name)],
+      new web3.PublicKey(LOAN_REVIEW_PROGRAM_ID)
     );
 
     const instruction = new web3.TransactionInstruction({
@@ -76,7 +76,7 @@ const Card: FC<CardProps> = (props) => {
         },
       ],
       data: buffer,
-      programId: new web3.PublicKey(MOVIE_REVIEW_PROGRAM_ID),
+      programId: new web3.PublicKey(LOAN_REVIEW_PROGRAM_ID),
     });
 
     transaction.add(instruction);
@@ -122,18 +122,18 @@ const Card: FC<CardProps> = (props) => {
             textAlign={"center"}
           >
             <div className={styles.card}>
-              <p>Applicant Name: {props.movie.name}</p>
+              <p>Applicant Name: {props.Loan.name}</p>
             </div>
           </Text>
           <Spacer />
           <Text color="gray.200">
             <div className={styles.card}>
-              <p>Email: {props.movie.email}</p>
+              <p>Email: {props.Loan.email}</p>
             </div>
           </Text>
           <Text my={2} color="gray.400">
             <div className={styles.card}>
-              <p>Amount: {props.movie.amount}</p>
+              <p>Amount: {props.Loan.amount}</p>
               <Button onClick={handleSubmit} size={"md"}>
                 Grant Loan
               </Button>

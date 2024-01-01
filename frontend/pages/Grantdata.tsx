@@ -20,13 +20,13 @@ const theme = extendTheme({
 const LoanList: FC = () => {
   //const connection = new web3.Connection('https://white-spring-spring.solana-devnet.quiknode.pro/5e71175caa83cbf42670c2bb41e8eb6ff4799cde/');
   const connection = new web3.Connection(web3.clusterApiUrl("devnet"));
-  const [movies, setMovies] = useState<Loan[]>([]);
+  const [Loans, setLoans] = useState<Loan[]>([]);
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
     LoanCoordinator.fetchPage(connection, page, 5, search, search !== "").then(
-      setMovies
+      setLoans
     );
   }, [page, search]);
 
@@ -45,8 +45,8 @@ const LoanList: FC = () => {
             mb={2}
           />
         </Center>
-        {movies.map((movie, i) => (
-          <Card key={i} movie={movie} />
+        {Loans.map((Loan, i) => (
+          <Card key={i} Loan={Loan} />
         ))}
         <Center>
           <HStack w="full" mt={2} mb={8} ml={4} mr={4}>
