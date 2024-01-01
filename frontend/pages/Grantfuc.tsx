@@ -15,10 +15,21 @@ import styles from "../pages/Home.module.css";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 const MOVIE_REVIEW_PROGRAM_ID = "54NiyD7beYFBDUZq8DNTpmAbeqKB3YNgE8CnUpzYmCCt";
 export interface CardProps {
-  movie: Loan;
+  movie?: Loan; // Make movie prop optional
 }
 import { useState } from "react";
 const Card: FC<CardProps> = (props) => {
+  // Check if 'props.movie' is undefined or in progress
+  if (!props.movie) {
+    return (
+      <Box>
+        {/* Render a message for undefined or in-progress movie */}
+        <Text color="red">
+          Movie information not available or page in progress
+        </Text>
+      </Box>
+    );
+  }
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [dob, setDob] = useState("");
