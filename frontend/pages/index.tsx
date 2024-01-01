@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.App}>
       <Head>
-        <title>Loan Application</title>
+        <title>Raise Credit</title>
       </Head>
       <AppBar />
       <Center>

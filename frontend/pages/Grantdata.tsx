@@ -6,6 +6,7 @@ import * as web3 from "@solana/web3.js";
 import { LoanCoordinator } from "../Coordinator/LoanCoordinator";
 import styles from "./Home.module.css";
 import { Button, Center, HStack, Input, Spacer } from "@chakra-ui/react";
+import AppBar from "./AppBar";
 const theme = extendTheme({
   styles: {
     global: {

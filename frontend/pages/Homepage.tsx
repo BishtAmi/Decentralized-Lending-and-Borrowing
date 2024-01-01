@@ -47,7 +47,7 @@ function HomePage() {
           // box-shadow="5px 5px 10px rgba(0,0,0,0.3),0 1px 2px rgba(0,0,0,0.24)"
         >
           <div className={styles.msg}>
-            <h1> Click below to Apply for Loan</h1>
+            <h1> Click below to Apply for a Loan</h1>
           </div>
           <div className={styles.button3}>
             <div className={styles.left}>
@@ -56,6 +56,8 @@ function HomePage() {
                 color="white"
                 variant="solid"
                 size="lg"
+                width="90px"
+                height="50px"
                 _hover={{ backgroundColor: "skyblue", color: "black" }}
                 //onClick={handleApplyClick}
                 onClick={navigateToForm}
@@ -65,7 +67,7 @@ function HomePage() {
             </div>
             {/* <Box mt={1}> */}
             <div className={styles.msg}>
-              <h1> Click below to grant for Loan</h1>
+              <h1> Click below to grant a Loan</h1>
             </div>
             <div className={styles.right}>
               <Button
@@ -73,28 +75,36 @@ function HomePage() {
                 color="white"
                 variant="solid"
                 size="lg"
+                width="90px"
+                height="50px"
                 _hover={{ backgroundColor: "skyblue", color: "black" }}
                 onClick={navigateToGrant}
               >
                 <Link href={"/Grantdata"}> Grant</Link>
               </Button>
+            </div>
+            {/* <Spacer></Spacer>
               <Spacer></Spacer>
-              <div className={styles.msg}>
-                <h1> Click below to pay Loan</h1>
-              </div>
+              <Spacer></Spacer>
+              <Spacer></Spacer>
+              <Spacer></Spacer> */}
+            <div className={styles.msg}>
+              <h1> Click below to Repay Loan</h1>
             </div>
-            <div className={styles.centers}>
-              <Button
-                backgroundColor="rgb(7, 6, 7)"
-                color="white"
-                variant="solid"
-                size="lg"
-                _hover={{ backgroundColor: "skyblue", color: "black" }}
-                onClick={navigateToPay}
-              >
-                Pay
-              </Button>
-            </div>
+          </div>
+          <div className={styles.centers}>
+            <Button
+              backgroundColor="rgb(7, 6, 7)"
+              color="white"
+              variant="solid"
+              size="lg"
+              width="90px"
+              height="50px"
+              _hover={{ backgroundColor: "skyblue", color: "black" }}
+              onClick={navigateToPay}
+            >
+              Pay
+            </Button>
           </div>
         </Box>
       </Box>
