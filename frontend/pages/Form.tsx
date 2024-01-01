@@ -18,8 +18,8 @@ import {
 import * as web3 from "@solana/web3.js";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import styles from "../pages/Home.module.css";
+import AppBar from "./AppBar";
 const MOVIE_REVIEW_PROGRAM_ID = "54NiyD7beYFBDUZq8DNTpmAbeqKB3YNgE8CnUpzYmCCt";
-
 const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -33,7 +33,26 @@ const Form = () => {
     const movie = new Loan(name, email, dob, amount);
     handleTransactionSubmit(movie);
   };
+  const [inputValue, setInputValue] = useState("");
+  // const handleApplyClick = () => {
+  //   // Your logic for handling the button click with the integer value
+  //   const integerValue = parseInt(inputValue, 10);
+  //   if (!isNaN(integerValue)) {
+  //     // Perform actions with the integer value
+  //     console.log("Integer value:", integerValue);
+  //   } else {
+  //     // Show an error message or handle the case where the input is not a valid integer
+  //     console.error("Invalid integer value");
+  //   }
+  // };
+  const handleInputChange = (event) => {
+    const inputValue = event.target.value;
 
+    // Check if the input consists of only digits using a regular expression
+    if (/^\d*$/.test(inputValue)) {
+      setAmount(inputValue);
+    }
+  };
   const handleTransactionSubmit = async (movie: Loan) => {
     if (!publicKey) {
       alert("Please connect your wallet!");
@@ -88,6 +107,7 @@ const Form = () => {
 
   return (
     <div className={styles.App}>
+      <AppBar/>
       <Box h="100vh" display="flex" alignItems="center" justifyContent="center">
         <div className={styles.Loan}>
           <div className={styles.Loanh1}>
@@ -112,7 +132,7 @@ const Form = () => {
                 <Input
                   id="name"
                   color="black"
-                  placeholder="enter your name"
+                  placeholder="Jhon Wick"
                   onChange={(event) => setName(event.currentTarget.value)}
                 />
               </FormControl>
@@ -123,7 +143,7 @@ const Form = () => {
                 <Input
                   id="email"
                   color="black"
-                  placeholder="enter your email"
+                  placeholder="hello@gmail.com"
                   onChange={(event) => setEmail(event.currentTarget.value)}
                 />
               </FormControl>
@@ -134,7 +154,7 @@ const Form = () => {
                 <Textarea
                   id="review"
                   color="black"
-                  placeholder="purpose of loan"
+                  placeholder="Home Loan"
                   onChange={(event) => setDob(event.currentTarget.value)}
                 />
               </FormControl>
@@ -145,7 +165,12 @@ const Form = () => {
                 <Input
                   // onChange={(event) =>
                   //   setAmount(Number(event.currentTarget.value))}
-                  onChange={(event) => setAmount(event.currentTarget.value)}
+                  // onInput={handleInputChange(event)
+                  type="number"
+                  onChange={(event) => {
+                  setAmount(event.currentTarget.value);
+                  
+                  }}
                 >
                   {/* <NumberInputField id="amount" color="gray.400" />
                   <NumberInputStepper color="gray.400">

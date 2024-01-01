@@ -15,7 +15,7 @@ const AppBar = () => {
   return (
     <div className={styles.AppHeader}>
       <img src="/solanaLogo.png" height={30} width={200} />
-      <span>Wallet-Adapter Example</span>
+      {/* <span>Raise Credit</span> */}
       <DynamicWalletMultiButton />
     </div>
   );

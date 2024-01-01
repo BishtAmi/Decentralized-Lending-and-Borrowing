@@ -25,7 +25,7 @@ export const AppBar: FC = () => {
   return (
     <div className={styles.AppHeader}>
       <img src="" height={30} width={170} />
-      <span>Web3 Credit</span>
+      <span>Raise Credit</span>
       {isClient && <DynamicWalletMultiButton />}
     </div>
   );
