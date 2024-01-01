@@ -132,7 +132,7 @@ const Form = () => {
                 <Input
                   id="name"
                   color="black"
-                  placeholder="Jhon Wick"
+                  placeholder="John Wick"
                   onChange={(event) => setName(event.currentTarget.value)}
                 />
               </FormControl>
